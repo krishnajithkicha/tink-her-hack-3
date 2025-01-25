@@ -1,4 +1,4 @@
-# [Project Name] 🎯
+#NEIGHBORLY 🎯
 
 
 ## Basic Details
@@ -6,9 +6,9 @@
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1:Krishna Ajith- [College]
+- Member 2: Alina George  - [College]
+- Member 3:Mariya Jyothy- [College]
 
 ### Hosted Project Link
 [mention your project hosted project link here]
