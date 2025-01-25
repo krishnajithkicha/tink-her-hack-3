@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighborly</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffeef2;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fefefe;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .login {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .signup {
+            background-color: #00c853;
+            color: white;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content h1 {
+            font-size: 3em;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding: 20px;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            min-width: 250px;
+            max-width: 300px;
+            flex: 0 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            padding: 10px;
+            color: #333;
+        }
+
+        .card p {
+            padding: 0 10px 10px;
+            color: #555;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+
+        .hero img {
+            width: 300pt;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 2em;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2em;
+            color: #777;
+        }
+
+        .login-page {
+            display: none;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0f7fa;
+        }
+
+        .login-form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-form h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .login-form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Neighborly</div>
+    <div class="header-buttons">
+        <button class="login" onclick="showLoginPage()">Login</button>
+        <button class="signup">Sign Up</button>
+    </div>
+</header>
+
+<div class="hero">
+    <img src="Logo1.png" alt="Hero Image">
+    <div class="hero-title">Neighborly</div>
+    <img src="Logo 2.png" alt="Hero Image">
+    <div class="hero-subtitle">Connect. Share. Thrive.</div>
+</div>
+
+<div class="content">
+    <h1>Connect. Share. Thrive.</h1>
+    <p>An app that transforms neighbors into a community. Share skills, borrow items, and discover local events—your neighborhood, reimagined!</p>
+</div>
+
+<div class="card-container">
+    <div class="card">
+        <img src="local events.png" alt="Local Events">
+        <h3>Local Events</h3>
+    </div>
+    <div class="card">
+        <img src="skill sharing.png" alt="Skill Sharing">
+        <h3>Skill Sharing</h3>
+    </div>
+    <div class="card">
+        <img src="borrow and lend items.png" alt="Borrow and Lend Items">
+        <h3>Borrow and Lend Items</h3>
+    </div>
+    <div class="card">
+        <img src="Online Chatting.png" alt="Online Chatting">
+        <h3>Online Chatting</h3>
+    </div>
+</div>
+
+<div class="login-page" id="login-page">
+    <div class="login-form">
+        <h2>Login</h2>
+        <input type="email" placeholder="Enter your email" required>
+        <input type="password" placeholder="Enter your password" required>
+        <button onclick="submitLogin()">Login</button>
+        <div class="forgot-password">Forgot Password?</div>
+    </div>
+</div>
+
+<script>
+    function showLoginPage() {
+        document.querySelector('.login-page').style.display = 'flex';
+    }
+
+    function submitLogin() {
+        alert('Login submitted!');
+        // Logic to validate and handle login can be added here.
+        document.querySelector('.login-page').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
