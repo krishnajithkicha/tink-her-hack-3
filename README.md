@@ -11,10 +11,11 @@ NEIGHBORLY 🎯
 - Member 3: Mariya Jyothy - Department of Computer Science,Cusat
 
 ### Hosted Project Link
-[mention your project hosted project link here]
+https://6795bee56c295d45e049ff9b--bucolic-bunny-edadab.netlify.app/
 
 ### Project Description
-[2-3 lines about what your project does]
+The Neighborhood Networking Hub connects local communities through key features like event creation, skill-sharing, and mutual aid requests. Users can borrow/lend items, participate in community chats, and visualize opportunities on an interactive map. Profiles with trust badges and gamified rewards encourage engagement, while eco-friendly initiatives and emergency aid options foster a supportive and sustainable neighborhood.
+
 
 ### The Problem statement
 [What ridiculous problem are you solving?]
@@ -25,15 +26,9 @@ NEIGHBORLY 🎯
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+-React JS for UI, Google Maps API for geolocation and mapping.
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+
 
 ### Implementation
 For Software:
