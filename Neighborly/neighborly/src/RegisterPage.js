@@ -3,6 +3,8 @@ import { setDoc, doc } from 'firebase/firestore';
 import { auth, db, storage } from './firebase';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'; // Update this line
+import React from "react";
 
 const RegisterPage = () => {
   const [email, setEmail] = useState('');
@@ -28,28 +30,20 @@ const RegisterPage = () => {
 
       // Firebase Storage: Upload profile picture
       if (profilePicture) {
-        const uploadTask = storage.ref(`profile_pictures/${user.uid}`).put(profilePicture);
-        uploadTask.on(
-          'state_changed',
-          (snapshot) => {},
-          (error) => {
-            alert('Error uploading picture: ' + error.message);
-          },
-          async () => {
-            const downloadURL = await uploadTask.snapshot.ref.getDownloadURL();
+        const storageRef = ref(storage, `profile_pictures/${user.uid}`);
+        await uploadBytes(storageRef, profilePicture);
+        const downloadURL = await getDownloadURL(storageRef);
 
-            // Firebase Firestore: Store user info
-            await setDoc(doc(db, 'users', user.uid), {
-              email,
-              bio,
-              phoneNumber,
-              profilePicture: downloadURL,
-            });
+        // Firebase Firestore: Store user info
+        await setDoc(doc(db, 'users', user.uid), {
+          email,
+          bio,
+          phoneNumber,
+          profilePicture: downloadURL,
+        });
 
-            alert('Registration successful!');
-            navigate('/login');
-          }
-        );
+        alert('Registration successful!');
+        navigate('/login'); // Redirect to login page after successful registration
       } else {
         alert('Please upload a profile picture!');
       }

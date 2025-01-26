@@ -8,10 +8,16 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    // Perform login logic here (e.g., validate credentials, fetch API, etc.)
+    navigate("/DashBoard"); // Redirect to the dashboard after successful login
+  };
+
   const submitLogin = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate('/'); // Redirect to homepage after successful login
+      navigate('/DashBoard'); // Redirect to homepage after successful login
     } catch (error) {
       alert('Login failed: ' + error.message);
     }
