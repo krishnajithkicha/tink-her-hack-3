@@ -6,9 +6,9 @@ NEIGHBORLY 🎯
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: Krishna Ajith - Department of Computer Science,Cusat
+- Member 2: Alina George - Department of Computer Science,Cusat
+- Member 3: Mariya Jyothy - Department of Computer Science,Cusat
 
 ### Hosted Project Link
 [mention your project hosted project link here]
