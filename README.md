@@ -1,8 +1,8 @@
-# [Project Name] 🎯
+NEIGHBORLY 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: THREE BUGS
 
 
 ### Team Members
